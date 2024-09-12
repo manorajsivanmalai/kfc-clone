@@ -1,0 +1,81 @@
+
+
+
+.headmenus{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 45px;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 9px;
+    margin-left: 100px;
+}
+.headmenus a img{
+    width:74px;
+}
+.headicons{
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    justify-content: end;
+    align-items: center;
+    margin-right: 174px;
+}
+.signin img{
+        width: 27px;
+        
+}
+.signin{
+    padding-right: 16px;
+    border-right: solid 1px #dda8a8;
+}
+.bucket img{
+    width: 48px;
+}
+
+.headmenus a,.headicons a{
+    text-decoration: none;
+    color: black;
+}
+.headicons a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: small;
+    font-weight: bold;
+}
+.mobile {
+    display: none;
+  }
+@media only screen and (max-width: 997px) {
+    .mobile {
+      display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .kfclogo-mob{
+        width: 80px;
+    }
+    .mobile .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+     .menubar{
+        display: flex;
+        align-items: center;
+    }  
+    .menubar svg{
+        font-size: 27px;
+    }
+    .mobile .bucket{
+        font-size: small;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+    }
+ 
+  }
