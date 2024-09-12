@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import "./Header.css";
+import Home from "../pages/Home";
 function Header(params) {
     return (
         <div>
@@ -14,6 +15,7 @@ function Header(params) {
                     </div>
              </div>
             <Navbar />
+            <Home />
         </div>
     )
 }
