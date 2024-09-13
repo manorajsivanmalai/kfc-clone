@@ -69,14 +69,18 @@ const Container = styled.div`
             padding: 10px;
             }
 
-         @media only screen and (max-width: 600px) {
+         @media only screen and (max-width: 768px) {
             
             .card-main{
                padding: 4px;
             }
                .card-btn{
-                padding: 5px 15px;
+             padding: 8px 13px;
+             font-size: 11px;
             }
+            .card-footer{
+                font-size: 14px;
+                } 
          }   
 `;
 export default Card;

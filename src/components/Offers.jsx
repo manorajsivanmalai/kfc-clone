@@ -49,6 +49,13 @@ function Offers(params) {
             },
           },
           {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+          {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,
@@ -74,7 +81,9 @@ function Offers(params) {
             {
                 offers.map((offer) => {
                     return (
-                        <Card img={offer.img} title={offer.text} text={offer.text}/>
+                       
+                          <Card img={offer.img} title={offer.text} text={offer.text} />
+                        
                     );
                 })
             }
@@ -87,7 +96,7 @@ function Offers(params) {
 }
 const Container = styled.div`
 
- background-color: black;
+ background-color: #202124;
  
 .bar{
    width:50px;
@@ -104,12 +113,17 @@ padding: 42px 0px;}
   color: white;
   
 }
-  @media only screen and (max-width: 600px) {
+  .offer-title a{
+    color: white;
+  }
+  @media only screen and (max-width: 768px) {
   
   .offer-title div{
    flex-direction: column;
   }
-  
+.slick-prev, .slick-next{
+    width:60px ;
+  }
   
   }
 

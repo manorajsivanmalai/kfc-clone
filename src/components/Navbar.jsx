@@ -16,7 +16,7 @@ function Navbar() {
             <Link to="/">
               <img src={kfclogo} alt="kfclogo" />
             </Link>
-            <Link to="/">Menu</Link>
+            <Link to="/menu">Menu</Link>
             <Link to="/">Deals</Link>
           </ul>
         </div>
@@ -42,7 +42,7 @@ function Navbar() {
             <img src={kfclogo} className="kfclogo-mob" alt="kfclogo" />
           </Link>
         </div>
-        <div className="col-4" style={{"text-align": "end"}}>
+        <div className="col-4" style={{"textAlign": "end"}}>
           <Link to="/" className="bucket">
             <span>0$</span>
             <img src={bucket} alt="bucket" />

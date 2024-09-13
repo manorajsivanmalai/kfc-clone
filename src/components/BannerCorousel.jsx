@@ -25,7 +25,7 @@ import styled from "styled-components";
         <Slider {...settings}>
             {images.map((image)=>{
                 return(
-                    <div>
+                    <div key={image}>
                     <Link><img src={image} alt="" className="img-fluid" /></Link>
                     </div>
                 )

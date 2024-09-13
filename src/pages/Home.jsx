@@ -1,22 +1,14 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import "./Home.css";
 import RedBar from "../components/RedBar";
 import BannerCorousel from "../components/BannerCorousel";
 import Categories from "../components/Categories";
 import Offers from "../components/Offers";
-import Footer from "../components/Footer";
+import CurrentLocation from "../components/CurrentLocation";
+import styled from "styled-components";
 function Home() {
     return(
-        <div>
-                <div className="container-fluid homepart1">
-                        <div className="homeloc">
-                            <FontAwesomeIcon icon={faLocationDot} />
-                            <span>KFC | Order KFC Chicken Online & Find Restaurants</span>
-                            <button className="homelocation">change</button>
-                        </div>
-                </div>
+        <Container>
+                <CurrentLocation />
                 <div>
                     <RedBar hgt="25px" wdt="8px" spc="10px" clr="red"/>
                     <div className="d-grid justify-content-center">
@@ -44,11 +36,83 @@ function Home() {
                 <div>
                     <Offers />
                 </div>
-                <Footer/>
+             
 
-        </div>
+        </Container>
 
     );
 }
 
+const Container = styled.div`
+
+.homeorders{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: small;
+    font-weight: 600;
+    margin-top: 9px;
+    justify-content: space-between;
+    background-color: #e3e3e3;
+    border: 1px solid #e3e3e3;
+    width: 404px;
+    padding: 1px 2px;
+    border-radius: 100px;
+}
+
+.homeorders button{ 
+    padding: 11px 35px;
+    background-color: #e3e3e3;
+    border: 1px solid #e3e3e3; 
+    border-radius: 32px;
+    color: black;
+    font-weight: bold;
+}
+.active{
+    color: white !important;
+    background-color: red !important;
+}
+.browse-categories{
+     height: 150px;
+     display: flex;
+     align-items: center;
+}
+.browse-categories h4   {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+   
+}
+.browse-categories div{
+    height: 2px;
+    background-color: #dabcbc;
+    width: 71%;
+    margin-left: 78px;
+}
+
+@media only screen and (max-width:600px){
+
+    
+    .homeorders button{
+        padding: 11px 26px;
+    }
+    .homeorders{
+        width: 360px;
+    }
+    .browse-categories div{
+        height: 2px;
+        background-color: #dabcbc;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    .browse-categories h4   {
+        font-size: 15px;
+    }
+    .browse-categories{
+        height: 100px;
+       
+   }
+}
+`;
 export default Home;

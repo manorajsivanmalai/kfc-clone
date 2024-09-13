@@ -52,7 +52,7 @@ function Categories() {
         <div className="row">
           {categeries.map((categery) => {
             return (
-              <div className="col-lg-3 col-6 pt-3 pb-3">
+              <div className="col-lg-3 col-6 pt-3 pb-3" key={categery.title}>
                 <Link className="text-decoration-none">
                   <div>
                     <img src={categery.img} alt="" className="img-fluid" />
