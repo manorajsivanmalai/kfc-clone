@@ -57,7 +57,7 @@ function SideMenuBar(params) {
                         {categeries.map((categery) => {
                           return (
                             <li key={categery.title}>
-                              <Link to="/">{categery.title}</Link>
+                              <Link to={"#"+categery.title.trim().replace(/ /g,'-')}>{categery.title}</Link>
                             </li>
                           );
                         })}
@@ -92,5 +92,29 @@ const Container = styled.div`
    font-size: 16px;
    font-weight: 600;
  }
+    @media only screen and (max-width:768px){
+    
+    .iconandtitle{
+     display:none;
+    }
+    .sidemenu{
+       overflow-y: scroll;
+    }
+    .sidemenu ul{
+      display: flex;
+      z-index: 1000;
+      justify-content: start;
+      align-items: center;
+      text-wrap:nowrap;
+    }
+   
+    .sidemenu ul li{
+      padding: 5px;
+    }
+    .sidemenu ul li a{
+      font-size: 14px;
+    }
+  
+  }
 `;
 export default SideMenuBar;

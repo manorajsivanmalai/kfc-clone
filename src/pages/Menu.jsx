@@ -11,10 +11,10 @@ function Menu() {
       <CurrentLocation />
       <div className="container">
         <div className="row">
-          <div className=" stky col-lg-4">
+          <div className="stky col-lg-4">
             <SideMenuBar />
           </div>
-          <div className="container stky col-lg-8">
+          <div className="container col-lg-8">
             <div className="searchbar">
               <FontAwesomeIcon icon={faSearch} />
               <input
@@ -31,13 +31,11 @@ function Menu() {
 }
 
 const Container = styled.div`
-  //  .stky{
-  //      position: sticky;
-  //      top: 0;
-  //      left: 0;
-  //      right: 0;
-  //      bottom: 0;
-  //  }
+    .stky{
+          position: sticky;
+          top: 174px;
+          height: 100%;
+    }
   .searchbar {
     padding: 39px 0px 28px 0px;
     border-bottom: 3px solid #767171;
@@ -54,6 +52,34 @@ const Container = styled.div`
     padding: 3px 4px 3px 32px;
     font-size: 14px;
     border: 2px solid #e3e3e3;
+  }
+
+  @media only screen and (max-width:768px){
+  
+      .stky{
+        position: sticky;
+        top: 112px;
+        height: 100%;
+         z-index: 10;
+        background: #ffffff;
+    }  
+    .searchbar{
+       position: sticky;
+        top: 162px;
+        z-index: 10;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }    
+  .searchbar {
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid #767171;
+  }
+  .sidemenu::-webkit-scrollbar {
+    display: none;
+}
   }
 `;
 export default Menu;
