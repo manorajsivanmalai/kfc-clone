@@ -81,7 +81,7 @@ function Offers(params) {
         <div className="offer-title">
              <div>
                 <h5 className="text-uppercase">Exclusive Offers for you</h5>
-                <Link>View All Deals</Link>
+                <Link to="/deal">View All Deals</Link>
              </div>
     
         </div>
