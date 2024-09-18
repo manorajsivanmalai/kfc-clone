@@ -1,13 +1,13 @@
 
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ch from "../assets/menu-categeries/D-K973.jpg";
 import ch1 from "../assets/menu-categeries/D-K974.jpg";
 import ch2 from "../assets/menu-categeries/D-PR00002324.jpg";
 import ch3 from "../assets/menu-categeries/D-PR00002325.jpg";
 import Slider from "react-slick";
 import { useState } from "react";
-import { search } from "fontawesome";
+// import { search } from "fontawesome";
 
 function MenuCard(props) {
 

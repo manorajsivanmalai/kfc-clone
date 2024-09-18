@@ -9,7 +9,7 @@ import off1 from "../assets/offers/ADDCHK99.jpg";
 import off2 from "../assets/offers/CHKZINGER.jpg";
 import off3 from "../assets/offers/BIGSAVE.jpg";
 import off4 from "../assets/offers/VEGZINGER.jpg";
-import off from "../assets/offers/signin.jpg";
+// import off from "../assets/offers/signin.jpg";
 import { useState } from "react";
 import Slider from "react-slick";
 
