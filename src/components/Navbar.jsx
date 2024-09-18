@@ -17,7 +17,7 @@ function Navbar() {
               <img src={kfclogo} alt="kfclogo" />
             </Link>
             <Link to="/menu">Menu</Link>
-            <Link to="/">Deals</Link>
+            <Link to="/deal">Deals</Link>
           </ul>
         </div>
         <div className="col-lg-6">

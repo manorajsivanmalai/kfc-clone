@@ -9,9 +9,14 @@ import off1 from "../assets/offers/ADDCHK99.jpg";
 import off2 from "../assets/offers/CHKZINGER.jpg";
 import off3 from "../assets/offers/BIGSAVE.jpg";
 import off4 from "../assets/offers/VEGZINGER.jpg";
+import off from "../assets/offers/signin.jpg";
+import { useState } from "react";
 import Slider from "react-slick";
+
 function Offers(params) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth);
       var offers = [
+      
         {
           img: off1,
           text: "1 Pc free Chicken Zinger on a cart value of 499 or above on first order. Only for registered users.",
@@ -30,12 +35,15 @@ function Offers(params) {
           },
         
       ]
-      
+      window.addEventListener("resize", () => {
+        setIsMobile(window.innerWidth);
+      })
+  
       const settings = {
         dots: false,
         infinite: false,
         className: "center",
-        centerMode: window.innerWidth <= 600 ? true : false,
+        centerMode: isMobile <= 600 ? true : false,
         centerPadding: "60px",  
         speed: 500,
         slidesToShow: 4, // Show 2 items per row
@@ -65,7 +73,7 @@ function Offers(params) {
         ],
       };
     return (    
-        <Container className="container-fluid">
+        <Container className="container-fluid off-main">
           <div className="container offers">
           <div className="bar">
                 <RedBar hgt="25px" wdt="8px" spc="10px" clr="red"/>
@@ -79,10 +87,10 @@ function Offers(params) {
         </div>
         <Slider {...settings} className="row">
             {
-                offers.map((offer) => {
+                offers.map((offer,j) => {
                     return (
                        
-                          <Card img={offer.img} title={offer.text} text={offer.text} />
+                          <Card img={offer.img} title={offer.text} text={offer.text} key={j} />
                         
                     );
                 })
@@ -124,7 +132,9 @@ padding: 42px 0px;}
 .slick-prev, .slick-next{
     width:60px ;
   }
-  
+  .offers{
+   overflow: hidden;
+  }
   }
 
 

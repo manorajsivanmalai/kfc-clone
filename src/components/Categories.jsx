@@ -80,9 +80,8 @@ const Container = styled.div`
   }
   .cate-title h5 {
     text-align: center;
-    font-family: "National 2 Condensed";
     font-style: normal;
-    font-weight: bold;
+    font-weight: 900;
     font-size: 15px;
     letter-spacing: 0.5px;
     text-transform: uppercase;

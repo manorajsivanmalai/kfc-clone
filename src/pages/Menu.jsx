@@ -5,7 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import MenuCard from "../components/MenuCard";
 import styled from "styled-components";
+import {useState } from 'react';
 function Menu() {
+
+  const [search , setSearch] = useState("");
+
+  console.log(search);
+  
   return (
     <Container as="section" className="menu">
       <CurrentLocation />
@@ -20,9 +26,10 @@ function Menu() {
               <input
                 type="text"
                 placeholder="Search our menu"
+                onInput={(e) => setSearch(e.target.value)}
               />
             </div>
-             <MenuCard />
+             <MenuCard search={search}/>
           </div>
         </div>
       </div>

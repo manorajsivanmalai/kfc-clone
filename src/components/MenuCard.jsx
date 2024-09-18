@@ -1,4 +1,4 @@
-import React from "react";
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ch from "../assets/menu-categeries/D-K973.jpg";
@@ -7,24 +7,10 @@ import ch2 from "../assets/menu-categeries/D-PR00002324.jpg";
 import ch3 from "../assets/menu-categeries/D-PR00002325.jpg";
 import Slider from "react-slick";
 import { useState } from "react";
+import { search } from "fontawesome";
 
-function MenuCard(params) {
-  const [currentIndex, setIndex] = useState(0);
-  var settings = {
-    dots: false,
-    infinite: false,
-    focusOnSelect: true,
-    className: "center",
-    centerMode: true,
-    centerPadding: "60px",
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    afterChange: function (index) {
-      setIndex(index + 1);
-    },
-  };
- const [curmove, setmove] = useState(0);
+function MenuCard(props) {
+
   var menucategery = [
     {
       title: "NEW CHICKEN ROLLS",
@@ -100,7 +86,7 @@ function MenuCard(params) {
           img: ch1,
         },
         {
-          Name: "CHICKEN ROLL",
+          Name: "Mano ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -129,7 +115,7 @@ function MenuCard(params) {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, a.",
           img: ch2,
         },
         {
@@ -309,13 +295,53 @@ function MenuCard(params) {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          text: "Lorem ipsum d magna aliqua.",
           img: ch3,
         },
       ],
     },
   ];
-  const [view, setView] = useState(true);
+  var settings = {
+    dots: false,
+    infinite: false,
+    focusOnSelect: true,
+    className: "center",
+    centerMode: true,
+    centerPadding: "60px",
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+   
+  };
+ console.log(props);
+ 
+  const [isMobile, setIsMobile] = useState(window.innerWidth);
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth);
+    })
+
+
+  const [slideindex, setSlideIndex] = useState(menucategery.map((e,i)=>{
+    return ({
+         id:i,value:0,
+     })
+  
+   }));
+  
+   function slideFinder(e,i,index) {
+    setSlideIndex(slideindex.map((e)=>{
+      if(e.id===i){
+        return ({
+          id:i,value:index
+        })
+      }
+      return e;
+      
+    }))
+ 
+}
+
+    
   return (
     <Container className="menu-card">
       <div className="menu-content pt-5 pb-4">
@@ -326,26 +352,20 @@ function MenuCard(params) {
                 <h3 id={menus.title.trim().replace(/ /g, "-")}>
                   {menus.title}
                 </h3>
-                <div>{i===curmove?currentIndex + "/" + menus.arr.length:""}</div>
+                <div className={isMobile<= 768?"d-block":"d-none"}>{slideindex.filter((e)=>e.id===i)[0].value+ "/" + menus.arr.length}</div>
               </div>
 
-              <div className="row">
-                {window.innerWidth <= 768 || view ? (
+              <div className="row" style={props.search===""?{}:{width:"100%"}}>
+                {isMobile<= 768 &&props.search===""? (
                   <Slider {...settings}>
                     {menus.arr.map((options, index) => {
-                      return (
-                        <div className="col-lg-4 col-md-6 card-box" key={index} onTouchMove={()=>setmove(i)}>
+                     if(props.search==="" || options.Name.toLowerCase().includes(props.search.toLowerCase())){
+            
+                     return (
+                        <div className="col-lg-4 col-md-6 card-box" key={index} onTouchMove={(e)=>slideFinder(e,i,index+1)}>
                           <div
                             className="card"
-                            style={
-                              i === 0 && window.innerWidth > 768
-                                ? {
-                                    width: "90%",
-                                    backgroundColor: "#f8f7f5",
-                                    border: "none",
-                                  }
-                                : {}
-                            }
+                           
                           >
                             <img
                               src={options.img}
@@ -366,7 +386,7 @@ function MenuCard(params) {
                                 <strong>{options.price}</strong>
                               </div>
                               <p className="card-text">{options.text}</p>
-                              <button onClick={() => setView(!view)}>
+                              <button>
                                 Add to cart{" "}
                                 <img
                                   src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"
@@ -377,10 +397,12 @@ function MenuCard(params) {
                           </div>
                         </div>
                       );
+                    } else return null;
                     })}
                   </Slider>
                 ) : (
                   menus.arr.map((options, index) => {
+                    if(props.search==="" || options.Name.toLowerCase().includes(props.search.toLowerCase())){
                     return (
                       <div
                         className={
@@ -399,7 +421,9 @@ function MenuCard(params) {
                                   backgroundColor: "#f8f7f5",
                                   border: "none",
                                 }
-                              : {}
+                              : {
+                                boxShadow: "0 2px 29px rgba(0, 0, 0, 0.15)",
+                              }
                           }
                         >
                           <img src={options.img} alt="" className="img-fluid" />
@@ -428,6 +452,7 @@ function MenuCard(params) {
                         </div>
                       </div>
                     );
+                  }else return null;
                   })
                 )}
               </div>
@@ -461,17 +486,25 @@ const Container = styled.div`
     color: #ffff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 11px;
     margin-left: 25px;
+    width: 75%;
+    
   }
   .card-body > div {
     flex-direction: column;
     justify-content: space-between;
   }
-  .card {
-    box-shadow: 0 2px 29px rgba(0, 0, 0, 0.15);
+  .card{
+    height: 100%;
   }
+   .card-body{
+       display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   } 
+
   @media only screen and (max-width: 768px) {
     .card-text1 {
       display: flex;
@@ -503,6 +536,17 @@ const Container = styled.div`
       justify-content: space-around;
     }
   }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .menu-content .row .card button {
+       padding: 9px 21px;
+      gap: 11px;
+      margin-left: 0px; 
+      width: 100%;
+     }
+     .card-body  div {
+      flex-direction: row-reverse;
+    }
+    }
 `;
 
 export default MenuCard;

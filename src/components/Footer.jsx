@@ -3,8 +3,62 @@ import logo from "../assets/kfclogofooter.jpg";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { useEffect,useState, } from "react";
 function Footer() {
+  
+    
+    const [isVisible, setIsVisible] = useState(false);
+   
+  
+ 
+    useEffect(() => {
+           
+  },[]);
+
+    
+   function handleClick(e){
+    if(e.target.localName==="div"&&e.target.children[0].localName!=="svg"){
+      if(isVisible){
+        e.target.parentElement.children[1].style="display:none;";
+        e.target.style="background-color: none";
+      }else{
+        e.target.parentElement.children[1].style="display:block;background-color: rgb(62 62 62)";
+        e.target.style="background-color: rgb(62 62 62)";
+      }
+    }
+    else if(e.target.localName==="h5"){
+      if(isVisible){
+        e.target.parentElement.parentElement.children[1].style="display:none;";
+        e.target.parentElement.style="background-color: none";
+      }else{
+        e.target.parentElement.parentElement.children[1].style="display:block;background-color: rgb(62 62 62)";
+        e.target.parentElement.style="background-color: rgb(62 62 62)";
+      }
+    }else if(e.target.localName==="div"&&e.target.children[0].localName==="svg"){
+      if(isVisible){
+        e.target.parentElement.parentElement.children[1].style="display:none;";
+        e.target.parentElement.style="background-color: none";
+      }else{
+        e.target.parentElement.parentElement.children[1].style="display:block;background-color: rgb(62 62 62)";
+        e.target.parentElement.style="background-color: rgb(62 62 62)";
+      }
+    }else{
+      if(isVisible){
+        e.target.parentElement.parentElement.parentElement.children[1].style="display:none;";
+        e.target.parentElement.parentElement.style="background-color: none";
+      }else{
+        e.target.parentElement.parentElement.parentElement.children[1].style="display:block;background-color: rgb(62 62 62)";
+        e.target.parentElement.parentElement.style="background-color: rgb(62 62 62)";
+      }
+    }
+      setIsVisible(!isVisible)
+   }
+
+   
+  
+     
+ 
+
   return (
     <Container as="footer">
       <div className="footer">
@@ -18,7 +72,7 @@ function Footer() {
               </div>
 
               <div className="col-lg-3  col-12">
-                <div className="footer-title">
+                <div className="footer-title" onClick={(e)=>handleClick(e)} >
                   <h5>KFC India</h5>
                   <div className="angleDown-icon">
                     <FontAwesomeIcon icon={faAngleDown} />
@@ -45,7 +99,7 @@ function Footer() {
                 </div>
               </div>
               <div className="col-lg-3  col-12">
-                <div className="footer-title">
+                <div className="footer-title"  onClick={(e)=>handleClick(e)} >
                   <h5>Legal</h5>
                   <div className="angleDown-icon">
                     <FontAwesomeIcon icon={faAngleDown} />
@@ -72,7 +126,7 @@ function Footer() {
                 </div>
               </div>
               <div className="col-lg-3  col-12">
-                <div className="footer-title">
+                <div className="footer-title" onClick={(e)=>handleClick(e)} >
                   <h5>KFC Food</h5>
                   <div className="angleDown-icon">
                     <FontAwesomeIcon icon={faAngleDown} />
@@ -96,7 +150,7 @@ function Footer() {
                 </div>
               </div>
               <div className="col-lg-3  col-12">
-                <div className="footer-title">
+                <div className="footer-title" onClick={(e)=>handleClick(e)} >
                   <h5>Support</h5>
                   <div className="angleDown-icon">
                     <FontAwesomeIcon icon={faAngleDown} />
@@ -312,6 +366,16 @@ const Container = styled.div`
   .kfc-logo {
     padding-bottom: 20px;
   }
+     .footer-links ul,
+  a {
+    list-style: none;
+    padding: 6px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer-title h5,footer-title div{
+    user-select: none;
+  }  
 `;
 
 export default Footer;
