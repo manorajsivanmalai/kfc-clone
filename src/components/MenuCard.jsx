@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 // import { Link } from "react-router-dom";
 import ch from "../assets/menu-categeries/D-K973.jpg";
@@ -7,11 +6,10 @@ import ch2 from "../assets/menu-categeries/D-PR00002324.jpg";
 import ch3 from "../assets/menu-categeries/D-PR00002325.jpg";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 function MenuCard(props) {
-
-  var menucategery = [
+  const [menucategery, setMenucategery] = useState([
     {
       title: "NEW CHICKEN ROLLS",
       arr: [
@@ -20,77 +18,88 @@ function MenuCard(props) {
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch,
+          orders: 0,
+          img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch1,
+          orders: 0,
+          img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch,
+          orders: 0,
+          img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch1,
+          orders: 0,
+          img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch,
+          orders: 0,
+          img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch1,
+          orders: 0,
+          img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch,
+          orders: 0,
+          img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch1,
+          orders: 0,
+          img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch,
+          orders: 0,
+          img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch1,
+          orders: 0,
+          img: ch1,
         },
         {
           Name: "Mano ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch1,
+          orders: 0,
+          img: ch1,
         },
       ],
     },
@@ -102,98 +111,112 @@ function MenuCard(props) {
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, a.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
       ],
     },
@@ -205,105 +228,117 @@ function MenuCard(props) {
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          orders:0,img: ch2,
+          orders: 0,
+          img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum d magna aliqua.",
-          orders:0,img: ch3,
+          orders: 0,
+          img: ch3,
         },
       ],
     },
-  ];
-  useEffect(() => {
-   
-  },[props])  
+  ]);
+
   var settings = {
     dots: false,
     infinite: false,
@@ -314,41 +349,59 @@ function MenuCard(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-   
   };
- console.log(props);
- 
+
   const [isMobile, setIsMobile] = useState(window.innerWidth);
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth);
+  window.addEventListener("resize", () => {
+    setIsMobile(window.innerWidth);
+  });
+
+  const [slideindex, setSlideIndex] = useState(
+    menucategery.map((e, i) => {
+      return {
+        id: i,
+        value: 0,
+      };
     })
+  );
 
-
-  const [slideindex, setSlideIndex] = useState(menucategery.map((e,i)=>{
-    return ({
-         id:i,value:0,
-     })
-  
-   }));
-  
-   function slideFinder(e,i,index) {
-    setSlideIndex(slideindex.map((e)=>{
-      if(e.id===i){
-        return ({
-          id:i,value:index
-        })
-      }
-      return e;
-      
-    }))
- 
-}
-  function addressCard(obj,i) {
-    menucategery[obj].arr[i].orders=menucategery[obj].arr[i].orders+1;
-    return menucategery[obj].arr[i].orders;
+  function slideFinder(e, i, index) {
+    setSlideIndex(
+      slideindex.map((e) => {
+        if (e.id === i) {
+          return {
+            id: i,
+            value: index,
+          };
+        }
+        return e;
+      })
+    );
+  }
+  function addressCard(obj, i,typeclick) {
+   console.log(typeclick);
+   
+    setMenucategery(
+      menucategery.map((e, j) => {
+        if (obj === j) {
+          return {
+            ...e,
+            arr: e.arr.map((ele, k) => {
+              if (k === i) {
+                return { ...ele, orders: typeclick === "minize" ? ele.orders - 1 : ele.orders + 1 };
+              }
+              return ele;
+            }),
+          };
+        }
+        return e;
+      })
+    );
+    console.log(menucategery);
   }
 
-    
+
+
   return (
     <Container className="menu-card">
       <div className="menu-content pt-5 pb-4">
@@ -359,20 +412,114 @@ function MenuCard(props) {
                 <h3 id={menus.title.trim().replace(/ /g, "-")}>
                   {menus.title}
                 </h3>
-                <div className={isMobile<= 768?"d-block":"d-none"}>{slideindex.filter((e)=>e.id===i)[0].value+ "/" + menus.arr.length}</div>
+                <div className={isMobile <= 768 ? "d-block" : "d-none"}>
+                  {slideindex.filter((e) => e.id === i)[0].value +
+                    "/" +
+                    menus.arr.length}
+                </div>
               </div>
 
-              <div className="row" style={props.search===""?{}:{width:"100%"}}>
-                {isMobile<= 768 &&props.search===""? (
+              <div
+                className="row"
+                style={props.search === "" ? {} : { width: "100%" }}
+              >
+                {isMobile <= 768 && props.search === "" ? (
                   <Slider {...settings}>
                     {menus.arr.map((options, index) => {
-                     if(props.search==="" || options.Name.toLowerCase().includes(props.search.toLowerCase())){
-            
-                     return (
-                        <div className="col-lg-4 col-md-6 card-box" key={index} onTouchMove={(e)=>slideFinder(e,i,index+1)}>
+                      if (
+                        props.search === "" ||
+                        options.Name.toLowerCase().includes(
+                          props.search.toLowerCase()
+                        )
+                      ) {
+                        return (
+                          <div
+                            className="col-lg-4 col-md-6 card-box"
+                            key={index}
+                            onTouchMove={(e) => slideFinder(e, i, index + 1)}
+                          >
+                            <div className="card">
+                              <img
+                                src={options.img}
+                                alt=""
+                                className="img-fluid"
+                              />
+                              <div className="card-body">
+                                <h5 className="card-title">{options.Name}</h5>
+                                <div className="d-flex pt-1">
+                                  <span className="card-text1 pb-2">
+                                    <img
+                                      className="menu-vegOrNonVeg-icon"
+                                      alt=" "
+                                      src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.d975d1f9.svg"
+                                    />{" "}
+                                    {options.catagory}
+                                  </span>
+                                  <strong>{options.price}</strong>
+                                </div>
+                                <p className="card-text">{options.text}</p>
+                             
+                                  {
+                                  options.orders<=0? (
+                                      <button onClick={(e) => addressCard(i, index,"addcard")}>
+                                      Add to cart
+                                      <img
+                                        src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"
+                                        alt=""
+                                      />
+                                     </button>
+
+                                  ) : (
+                                    <button>
+                                      <FontAwesomeIcon
+                                        icon={faPlus}
+                                        onClick={(e) => addressCard(i, index,"plus")}
+                                      />
+                                      {options.orders}
+                                        <FontAwesomeIcon
+                                        icon={faMinus}
+                                        onClick={(e) => addressCard(i, index,"minize")}
+                                      />
+                                </button>
+                                   
+                                  )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      } else return null;
+                    })}
+                  </Slider>
+                ) : (
+                  menus.arr.map((options, index) => {
+                    if (
+                      props.search === "" ||
+                      options.Name.toLowerCase().includes(
+                        props.search.toLowerCase()
+                      )
+                    ) {
+                      return (
+                        <div
+                          className={
+                            i === 0
+                              ? "col-lg-6 col-md-6"
+                              : "col-lg-4 col-md-6 card-box"
+                          }
+                          key={index}
+                        >
                           <div
                             className="card"
-                           
+                            style={
+                              i === 0
+                                ? {
+                                    width: "90%",
+                                    backgroundColor: "#f8f7f5",
+                                    border: "none",
+                                  }
+                                : {
+                                    boxShadow: "0 2px 29px rgba(0, 0, 0, 0.15)",
+                                  }
+                            }
                           >
                             <img
                               src={options.img}
@@ -393,79 +540,18 @@ function MenuCard(props) {
                                 <strong>{options.price}</strong>
                               </div>
                               <p className="card-text">{options.text}</p>
-                              <button onClick={(e) => addressCard(i, index)} >
-                                {/* Add to cart{" "}
+                              <button onClick={(e) => addressCard(i, index)}>
+                                Add to cart{" "}
                                 <img
                                   src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"
                                   alt=""
-                                /> */
-                              
-                               
-                                }
-                                  <FontAwesomeIcon icon={faPlus} onClick={(e) => addressCard(i, index)}/>
-                                   {options.orders}
-                                 <FontAwesomeIcon icon={faMinus} onClick={(e) => addressCard(i, index)}/>
+                                />
                               </button>
                             </div>
                           </div>
                         </div>
                       );
                     } else return null;
-                    })}
-                  </Slider>
-                ) : (
-                  menus.arr.map((options, index) => {
-                    if(props.search==="" || options.Name.toLowerCase().includes(props.search.toLowerCase())){
-                    return (
-                      <div
-                        className={
-                          i === 0
-                            ? "col-lg-6 col-md-6"
-                            : "col-lg-4 col-md-6 card-box"
-                        }
-                        key={index}
-                      >
-                        <div
-                          className="card"
-                          style={
-                            i === 0
-                              ? {
-                                  width: "90%",
-                                  backgroundColor: "#f8f7f5",
-                                  border: "none",
-                                }
-                              : {
-                                boxShadow: "0 2px 29px rgba(0, 0, 0, 0.15)",
-                              }
-                          }
-                        >
-                          <img src={options.img} alt="" className="img-fluid" />
-                          <div className="card-body">
-                            <h5 className="card-title">{options.Name}</h5>
-                            <div className="d-flex pt-1">
-                              <span className="card-text1 pb-2">
-                                <img
-                                  className="menu-vegOrNonVeg-icon"
-                                  alt=" "
-                                  src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.d975d1f9.svg"
-                                />{" "}
-                                {options.catagory}
-                              </span>
-                              <strong>{options.price}</strong>
-                            </div>
-                            <p className="card-text">{options.text}</p>
-                            <button onClick={(e) => addressCard(i,index)}>
-                              Add to cart{" "}
-                              <img
-                                src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"
-                                alt=""
-                              />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  }else return null;
                   })
                 )}
               </div>
@@ -503,20 +589,19 @@ const Container = styled.div`
     gap: 11px;
     margin-left: 25px;
     width: 75%;
-    
   }
   .card-body > div {
     flex-direction: column;
     justify-content: space-between;
   }
-  .card{
+  .card {
     height: 100%;
   }
-   .card-body{
-       display: flex;
+  .card-body {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-   } 
+  }
 
   @media only screen and (max-width: 768px) {
     .card-text1 {
@@ -551,15 +636,15 @@ const Container = styled.div`
   }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .menu-content .row .card button {
-       padding: 9px 21px;
+      padding: 9px 21px;
       gap: 11px;
-      margin-left: 0px; 
+      margin-left: 0px;
       width: 100%;
-     }
-     .card-body  div {
+    }
+    .card-body div {
       flex-direction: row-reverse;
     }
-    }
+  }
 `;
 
 export default MenuCard;
