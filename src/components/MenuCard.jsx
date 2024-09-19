@@ -6,9 +6,9 @@ import ch1 from "../assets/menu-categeries/D-K974.jpg";
 import ch2 from "../assets/menu-categeries/D-PR00002324.jpg";
 import ch3 from "../assets/menu-categeries/D-PR00002325.jpg";
 import Slider from "react-slick";
-import { useState } from "react";
-// import { search } from "fontawesome";
-
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 function MenuCard(props) {
 
   var menucategery = [
@@ -20,77 +20,77 @@ function MenuCard(props) {
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch,
+          orders:0,img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch1,
+          orders:0,img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch,
+          orders:0,img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch1,
+          orders:0,img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch,
+          orders:0,img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch1,
+          orders:0,img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch,
+          orders:0,img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch1,
+          orders:0,img: ch1,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch,
+          orders:0,img: ch,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch1,
+          orders:0,img: ch1,
         },
         {
           Name: "Mano ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch1,
+          orders:0,img: ch1,
         },
       ],
     },
@@ -102,98 +102,98 @@ function MenuCard(props) {
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, a.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
       ],
     },
@@ -205,102 +205,105 @@ function MenuCard(props) {
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          img: ch2,
+          orders:0,img: ch2,
         },
         {
           Name: "CHICKEN ROLL",
           price: "$10.00",
           catagory: "Veg",
           text: "Lorem ipsum d magna aliqua.",
-          img: ch3,
+          orders:0,img: ch3,
         },
       ],
     },
   ];
+  useEffect(() => {
+   
+  },[props])  
   var settings = {
     dots: false,
     infinite: false,
@@ -340,6 +343,10 @@ function MenuCard(props) {
     }))
  
 }
+  function addressCard(obj,i) {
+    menucategery[obj].arr[i].orders=menucategery[obj].arr[i].orders+1;
+    return menucategery[obj].arr[i].orders;
+  }
 
     
   return (
@@ -386,12 +393,18 @@ function MenuCard(props) {
                                 <strong>{options.price}</strong>
                               </div>
                               <p className="card-text">{options.text}</p>
-                              <button>
-                                Add to cart{" "}
+                              <button onClick={(e) => addressCard(i, index)} >
+                                {/* Add to cart{" "}
                                 <img
                                   src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"
                                   alt=""
-                                />
+                                /> */
+                              
+                               
+                                }
+                                  <FontAwesomeIcon icon={faPlus} onClick={(e) => addressCard(i, index)}/>
+                                   {options.orders}
+                                 <FontAwesomeIcon icon={faMinus} onClick={(e) => addressCard(i, index)}/>
                               </button>
                             </div>
                           </div>
@@ -441,7 +454,7 @@ function MenuCard(props) {
                               <strong>{options.price}</strong>
                             </div>
                             <p className="card-text">{options.text}</p>
-                            <button>
+                            <button onClick={(e) => addressCard(i,index)}>
                               Add to cart{" "}
                               <img
                                 src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg"

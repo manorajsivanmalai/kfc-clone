@@ -5,9 +5,13 @@ import kfclogo from "../assets/kfclogo.jpg";
 import sigin from "../assets/signinicon.jpg";
 import bucket from "../assets/bucket.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
+import RedBar from "./RedBar";
+import MenuIcon from "./MenuIcon";
 
 function Navbar() {
+  const [iconchange, seticonchange] = useState(true);
   return (
     <div className="container-fluid ">
       <div className="row pt-4 pb-3 desktop">
@@ -36,10 +40,14 @@ function Navbar() {
       </div>
       <div className="mobile">
       <div className="row">     
-        <div className="col-4 menubar"><FontAwesomeIcon icon={faBars} /></div>
+        <div className="col-4 menubar"><Link onClick={(e)=>seticonchange(!iconchange)}> 
+        {iconchange?<FontAwesomeIcon icon={faBars} />:
+          <FontAwesomeIcon icon={faXmark} />}
+        </Link></div>
         <div className="col-4 logo">
           <Link to="/">
-            <img src={kfclogo} className="kfclogo-mob" alt="kfclogo" />
+           {!iconchange?<RedBar  hgt="25px" wdt="8px" spc="10px" clr="red" />
+           : <img src={kfclogo} className="kfclogo-mob" alt="kfclogo" />}  
           </Link>
         </div>
         <div className="col-4" style={{"textAlign": "end"}}>
@@ -50,6 +58,7 @@ function Navbar() {
         </div>
       </div>
       </div>
+      {!iconchange && <MenuIcon />}
     </div>
   );
 }
