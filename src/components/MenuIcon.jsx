@@ -4,12 +4,28 @@ import sigin from "../assets/signinicon.jpg";
 import { Link } from "react-router-dom";
 import menu from "../assets/menu.jpg";
 import deal from "../assets/deals.jpg";
-function MenuIcon() {
-
+function MenuIcon({icon}) {
+ console.log(icon);
     const Container=styled.div`
     overflow: hidden;
     padding: 20px;
-    color: black;   
+    color: black;  
+   
+   .animieAdd{
+    display: block;
+    animation: animate 0.5s linear;
+   }
+    .hide{
+     display: none;
+    }
+    @keyframes animate{
+        0%{
+            transform: translateX(-200px);
+        }
+        100%{
+            transform: translateX(10px);
+        }
+    }
     .title{
             display: flex;
             flex-direction: column;
@@ -58,10 +74,12 @@ function MenuIcon() {
         align-items: center;
         gap: 10px;
     }
+    
     `;
 
   return (
-     <Container>
+     <Container >
+        <div className={!icon.iconchange ? "animieAdd" : "hide"}>
        <div className="title">
              <h4>lets get cookin</h4>
             <div>
@@ -73,11 +91,11 @@ function MenuIcon() {
        </div>
        
         <div className="col-12">
-             <Link to={"/menu"}> <div><h4>Menu</h4></div>
-             <div><img src={menu} alt=""className="img-fluid" /></div></Link>
+             <Link to={"/menu"} onClick={() => icon.seticonchange(pre=>!pre)}> <div><h4>Menu</h4></div>
+             <div><img src={menu} alt="" className="img-fluid" /></div></Link>
         </div>
         <div className="col-12">
-          <Link to={"/deal"}>
+          <Link to={"/deal"} onClick={() => icon.seticonchange(pre=>!pre)}>
           <div><h4>Deal</h4></div>
           <div><img src={deal} alt="" className="img-fluid" /></div>
           </Link>
@@ -99,7 +117,7 @@ function MenuIcon() {
                 </li>
             </ul>
        </div>
-     </Container>
+       </div></Container>
   )
 
  

@@ -9,8 +9,6 @@ import {useState } from 'react';
 function Menu() {
 
   const [search , setSearch] = useState("");
-
-  console.log(search);
   
   return (
     <Container as="section" className="menu">
@@ -65,14 +63,14 @@ const Container = styled.div`
   
       .stky{
         position: sticky;
-        top: 112px;
+        top: 63px;
         height: 100%;
          z-index: 10;
         background: #ffffff;
     }  
     .searchbar{
-       position: sticky;
-        top: 162px;
+        position: sticky;
+        top: 104px;
         z-index: 10;
         background: #ffffff;
         display: flex;

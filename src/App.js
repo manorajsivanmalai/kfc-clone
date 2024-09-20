@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Menu from './pages/Menu';
 import Deal from './pages/Deal';
 import MenuIcon from './components/MenuIcon';
+import MyCard from './pages/MyCard';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route path="menu" element={<Menu/>} />
           <Route path="deal" element={<Deal/>} />
           <Route path="menuicon" element={<MenuIcon/>}/>
+          <Route path='mycard' element={<MyCard/>}/>
         </Routes>
       <Footer/>
     </BrowserRouter>

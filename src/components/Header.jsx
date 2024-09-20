@@ -55,10 +55,14 @@ const Conatiner = styled.div`
     font-size: 15px;
 }
 @media only screen and (max-width:600px){
-    .headloc .location{
-        padding: 4px 31px; 
-        font-size: 8px;
+      
+    .headloc{
+       display:none;
     }
+    .headpart1 {
+    border:none;
+    }   
+
     
 }
 

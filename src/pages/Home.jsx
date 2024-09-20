@@ -12,8 +12,8 @@ function Home() {
                 <div>
                     <RedBar hgt="25px" wdt="8px" spc="10px" clr="red"/>
                     <div className="d-grid justify-content-center">
-                        <h5 className="text-center pt-4 pb-4 text-uppercase">Select your order type to start</h5>
-                        <div className="homeorders">
+                        <h5 className="text-center pt-4 pb-4 text-uppercase fonts">Select your order type to start</h5>
+                        <div className="homeorders fonts">
                             <button className="active">DELEVERY</button>
                             <button>PICK UP</button>
                             <button>DINE IN</button>
@@ -60,6 +60,8 @@ const Container = styled.div`
     border-radius: 100px;
 }
 
+    
+
 .homeorders button{ 
     padding: 11px 35px;
     background-color: #e3e3e3;
@@ -92,7 +94,12 @@ const Container = styled.div`
 
 @media only screen and (max-width:600px){
 
-    
+    .fonts{
+     font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    font-family: fantasy;
+    }
     .homeorders button{
         padding: 11px 26px;
     }
